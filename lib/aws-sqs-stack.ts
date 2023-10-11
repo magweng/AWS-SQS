@@ -34,7 +34,6 @@ export class AwsSqsStack extends cdk.Stack {
     queue.grantSendMessages(sendFn)
     queue.grantConsumeMessages(receiveFn)
     
-    //Creates processLambda that is triggered by sqs
     const processFn = new NodejsFunction(this, 'ProcessFn', {
       runtime: Runtime.NODEJS_LATEST,
       handler: 'index.handler',
@@ -48,7 +47,5 @@ export class AwsSqsStack extends cdk.Stack {
 
     const eventSource = new lambdaEventSources.SqsEventSource(queue)
     processFn.addEventSource(eventSource)
-
-
   }
 }
