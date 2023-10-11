@@ -1,8 +1,18 @@
-# Welcome to your CDK TypeScript project
+# Amazon Simple Queue Service
 
-This is a blank project for CDK development with TypeScript.
+This a small project to test and learn how to use AWS SQS with CDK.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+It contains examples on how to: 
+* Create a queue
+* Lambda function that sends messages(both single and in batch) to the queue
+* Lambda function to reveive messages from the queue
+* Lambda function that is triggered by the queue
+
+Both the lambda that receives and processes deleted the messages from the queue after it has processed them.
+
+After deploying i used the AWS GUI to start the SendFn with test data.
+
+
 
 ## Useful commands
 
